@@ -95,7 +95,8 @@ impl OutputDevice {
     /// * `pin` - The GPIO pin which the device is attached to
     ///  
     pub fn new(pin: u8) -> OutputDevice {
-        match Gpio::new() {
+        println!("eddie new pin");
+	match Gpio::new() {
             Err(e) => panic!("{:?}", e),
             Ok(gpio) => match gpio.get(pin) {
                 Err(e) => panic!("{:?}", e),
